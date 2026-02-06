@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Between the Lines</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: #0b0b0b;
+      color: #eaeaea;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1 {
+      font-weight: 400;
+      margin-bottom: 5px;
+    }
+    p {
+      opacity: 0.8;
+      font-size: 16px;
+    }
+    .line {
+      margin: 30px auto;
+      max-width: 420px;
+      padding: 18px;
+      border-radius: 12px;
+      background: #161616;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .line:hover {
+      background: #1f1f1f;
+    }
+    .hidden {
+      display: none;
+      margin-top: 10px;
+      font-size: 17px;
+      color: #ffd6df;
+    }
+    #final {
+      display: none;
+      margin-top: 50px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Between the Lines</h1>
+<p>Tap slowly.</p>
+
+<div class="line" onclick="reveal(this)">
+  I don’t always say everything.
+  <div class="hidden">But I notice the small things.</div>
+</div>
+
+<div class="line" onclick="reveal(this)">
+  I act strong.
+  <div class="hidden">But you feel like home.</div>
+</div>
+
+<div class="line" onclick="reveal(this)">
+  I don’t make promises lightly.
+  <div class="hidden">But I stay.</div>
+</div>
+
+<div id="final">
+  <p>No surprises left.</p>
+  <p><strong>This is me choosing you.</strong></p>
+</div>
+
+<script>
+  let opened = 0;
+  function reveal(el) {
+    const hidden = el.querySelector('.hidden');
+    if (hidden.style.display !== "block") {
+      hidden.style.display = "block";
+      opened++;
+    }
+    if (opened === 3) {
+      document.getElementById("final").style.display = "block";
+    }
+  }
+</script>
+
+</body>
+</html>
